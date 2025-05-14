@@ -1,0 +1,2269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.9.20240701.1.52_SAP" APIVersion="3.6.24183.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2025-04-14T23:44:36Z" uuid="17245483-59a7-44e5-bbda-32d968734d53">
+<template xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1" xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <?formServer defaultPDFRenderFormat acrobat11.0static?>
+   <?formServer allowRenderCaching 0?>
+   <?formServer formModel both?>
+   <subform name="data" locale="ambient" layout="tb">
+      <pageSet>
+         <pageArea name="mstDummy" id="77530cb6-44ac-11e4-8e45-a44e313798bc">
+            <medium long="297mm" short="210mm" stock="a4" orientation="landscape"/>
+            <contentArea h="134mm" name="cntMain" w="257mm" x="20mm" y="41mm"/>
+            <?templateDesigner expand 0?></pageArea>
+         <?templateDesigner expand 0?></pageSet>
+      <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
+      <subform w="0.1mm" h="0.1mm" name="Landscape_Factsheet">
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle FormMaster_Landscape_Letter_Factsheet?>
+         <pageSet>
+            <pageArea name="mst1">
+               <medium long="279.4mm" short="215.9mm" stock="letter" orientation="landscape"/>
+               <subform w="279.4mm" name="FirstPage" h="215.9mm" x="0mm" y="0mm">
+                  <bind match="dataRef" ref="$.FormMaster"/>
+                  <subform h="23.475mm" name="frmHeader" w="257mm" x="10mm" y="10.073mm">
+                     <bind match="none"/>
+                     <field name="txtTitle" x="0mm" w="156mm" h="0.590556in" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="18pt" typeface="Arial">
+                           <fill>
+                              <color value="91,91,91"/>
+                           </fill>
+                        </font>
+                        <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="bottom"/>
+                        <assist>
+                           <speak xliff:rid="5358768C-61FE-4A59-A914-D7B6789B66EA">Header</speak>
+                        </assist>
+                        <value>
+                           <text xliff:rid="33CD3120-83F7-4C0B-B81E-9A0FF698C86F">Form Title</text>
+                        </value>
+                        <bind match="dataRef" ref="$.PrintFormTitleText"/>
+                     </field>
+                     <field h="20mm" name="imgLogo" w="40mm" x="217mm">
+                        <ui>
+                           <imageEdit/>
+                        </ui>
+                        <assist>
+                           <toolTip xliff:rid="4C1EC202-24AF-4015-8F14-642CDBFD07D1">This is the sender company's logo</toolTip>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden" thickness="0.006in"/>
+                        </border>
+                        <bind match="dataRef" ref="$.Logo1Image"/>
+                        <value>
+                           <image href="http://vml2047.wdf.sap.corp:50000/sap/bc/fp/form/layout/placeholder"/>
+                        </value>
+                     </field>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform id="frmPage_ID_copy2_copy1_copy1_copy1" layout="tb" name="frmPage" w="257mm" y="35mm" x="10mm">
+                     <field access="readOnly" minH="5mm" name="txtPageIndex" w="257mm">
+                        <sapa1s xmlns="http://www.sap.com/a1s/cd/om/forms/config"><InfoBlockItem configurable="true" copyForCustomFields="false"><Description lang="en"/></InfoBlockItem></sapa1s>
+                        <ui>
+                           <textEdit>
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font typeface="Arial"/>
+                        <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <caption reserve="230mm">
+                           <font typeface="Arial" weight="bold"/>
+                           <value>
+                              <text xmlns:xft-xliff="http://www.xfa.org/schema/xfa-xliff/1.0/" xft-xliff:id="N3089" xliff:rid="N3089">Page:</text>
+                           </value>
+                           <para hAlign="right"/>
+                        </caption>
+                        <assist>
+                           <speak priority="caption"/>
+                        </assist>
+                        <event activity="ready" name="event__layout_ready" ref="$layout">
+                           <script>// First page - Concatenate the current page number and the overall number of pages
+//              Do not display the page number if there is just one page
+var pageCount = xfa.layout.pageCount();
+
+if (pageCount == "1")
+then
+	this.presence = "inactive";
+else
+	this.rawValue = Concat ("1", "/", pageCount);	
+endif
+</script>
+                        </event>
+                        <para hAlign="right"/>
+                        <bind match="none"/>
+                     </field>
+                     <margin topInset="0mm"/>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
+               <contentArea h="143.4mm" name="cntMain1" w="257mm" x="10mm" y="40mm"/>
+               <field access="readOnly" anchorType="bottomRight" minH="12.5836mm" minW="2mm" name="txtWatermark" x="274.4mm" y="210.9mm">
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="30pt" typeface="Arial" weight="bold">
+                     <fill>
+                        <color value="148,148,148"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="0in">
+                     <para vAlign="middle"/>
+                  </caption>
+                  <bind match="dataRef" ref="$.FormMaster.WatermarkText"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+                  <event activity="initialize" name="event__initialize">
+                     <script>// Rotate the watermark by 30 degrees
+txtWatermark.rotate = "30";
+</script>
+                  </event>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden" thickness="0.1764mm"/>
+                  </border>
+               </field>
+               <subform h="23mm" name="frmFooter" w="257mm" x="10mm" y="183mm">
+                  <subform layout="tb" name="frmFooterBlock_1" w="58.5mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="76F45C28-CFFC-4280-913C-BE285FFB757C">Footer Block 1</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock1Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_2" w="58.5mm" x="64.1mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="0E5E6640-942A-437E-85C1-FB1A6C62793E">Footer Block 2</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock2Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_3" w="58.5mm" x="128.2mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="7C68C235-000C-4078-AFE2-53FD0C55D9A1">Footer Block 3</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock3Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_4" w="58.5mm" x="192.3mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="3DA574FE-D41C-4F1B-A1E6-33B8E81E6DDD">Footer Block 4</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock4Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <bind match="dataRef" ref="$.FormMaster.Footer"/>
+                  <margin topInset="5mm"/>
+                  <?templateDesigner expand 0?></subform>
+               <occur min="1" max="1"/>
+               <?templateDesigner expand 1?></pageArea>
+            <pageArea name="mst2" id="Page1_ID_copy1_copy1_copy1_copy1">
+               <medium long="279.4mm" short="215.9mm" stock="letter" orientation="landscape"/>
+               <subform w="279.4mm" name="SubsequentPage" h="215.9mm" x="0mm" y="0mm">
+                  <bind match="dataRef" ref="$.FormMaster"/>
+                  <subform h="23.475mm" name="frmHeader" w="257mm" x="10mm" y="10.073mm">
+                     <bind match="none"/>
+                     <field name="txtTitle" x="0mm" w="156mm" h="0.590556in" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="18pt" typeface="Arial">
+                           <fill>
+                              <color value="91,91,91"/>
+                           </fill>
+                        </font>
+                        <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="bottom"/>
+                        <assist>
+                           <speak xliff:rid="4FEBCF95-077D-4A22-959C-674ADB3A8A1D">Header</speak>
+                        </assist>
+                        <value>
+                           <text xliff:rid="A86EEC8D-774B-478F-A9D2-4969FA4AEF68">Form Title</text>
+                        </value>
+                        <bind match="dataRef" ref="$.PrintFormTitleText"/>
+                     </field>
+                     <field h="20mm" name="imgLogo" w="40mm" x="217mm">
+                        <ui>
+                           <imageEdit/>
+                        </ui>
+                        <assist>
+                           <toolTip xliff:rid="71D3FB50-D908-4A70-BD7B-239B551AAC67">This is the sender company's logo</toolTip>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden" thickness="0.006in"/>
+                        </border>
+                        <bind match="dataRef" ref="$.Logo1Image"/>
+                        <value>
+                           <image href="http://vml2047.wdf.sap.corp:50000/sap/bc/fp/form/layout/placeholder"/>
+                        </value>
+                     </field>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform id="frmPage_ID_copy1_copy1_copy1" layout="tb" name="frmPage" w="257mm" y="35mm" x="10mm">
+                     <field access="readOnly" minH="5mm" name="txtPageIndex" w="257mm">
+                        <sapa1s xmlns="http://www.sap.com/a1s/cd/om/forms/config"><InfoBlockItem configurable="true" copyForCustomFields="false"><Description lang="en"/></InfoBlockItem></sapa1s>
+                        <ui>
+                           <textEdit>
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font typeface="Arial"/>
+                        <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <caption reserve="230mm">
+                           <font typeface="Arial" weight="bold"/>
+                           <value>
+                              <text xmlns:xft-xliff="http://www.xfa.org/schema/xfa-xliff/1.0/" xft-xliff:id="N3089" xliff:rid="BB4D383D-FE7F-4A65-85EA-E41A47F78AC4">Page:</text>
+                           </value>
+                           <para hAlign="right"/>
+                        </caption>
+                        <assist>
+                           <speak priority="caption"/>
+                        </assist>
+                        <event activity="ready" name="event__layout_ready" ref="$layout">
+                           <script>// Subsequent page - Concatenate the current page number and the overall number of pages
+var pageRef = ref($)
+$.rawValue = Concat(xfa.layout.page(pageRef), "/" , xfa.layout.pageCount())
+</script>
+                        </event>
+                        <para hAlign="right"/>
+                        <bind match="none"/>
+                     </field>
+                     <margin topInset="0mm"/>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
+               <contentArea h="143.4mm" name="cntMain2" w="257mm" x="10mm" y="40mm"/>
+               <field access="readOnly" anchorType="bottomRight" minH="12.5836mm" minW="2mm" name="txtWatermark" x="274.4mm" y="210.9mm">
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="30pt" typeface="Arial" weight="bold">
+                     <fill>
+                        <color value="148,148,148"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="0in">
+                     <para vAlign="middle"/>
+                  </caption>
+                  <bind match="dataRef" ref="$.FormMaster.WatermarkText"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+                  <event activity="initialize" name="event__initialize">
+                     <script>// Rotate the watermark by 30 degrees
+txtWatermark.rotate = "30";
+</script>
+                  </event>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden" thickness="0.1764mm"/>
+                  </border>
+               </field>
+               <subform h="23mm" name="frmFooter" w="257mm" x="10mm" y="183mm">
+                  <subform layout="tb" name="frmFooterBlock_1" w="58.5mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="5ABB71AD-E64E-4291-869C-43ABC2412EAB">Footer Block 1</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock1Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_2" w="58.5mm" x="64.1mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="4766B544-9803-4418-A755-0DA9C0EB33E2">Footer Block 2</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock2Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_3" w="58.5mm" x="128.2mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="8F0217BF-28BF-48C5-ACD2-15DF9C6E5CEF">Footer Block 3</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock3Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_4" w="58.5mm" x="192.3mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="A45093E1-5CF0-4EF9-9881-D0FD1225C784">Footer Block 4</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock4Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <bind match="dataRef" ref="$.FormMaster.Footer"/>
+                  <margin topInset="5mm"/>
+                  <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 1?></pageArea>
+            <?templateDesigner expand 0?></pageSet>
+         <bind match="none"/>
+         <?templateDesigner expand 1?></subform>
+      <subform w="0.1mm" h="0.1mm" name="Landscape_ItemList">
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle FormMaster_Landscape_Letter_ItemList?>
+         <pageSet>
+            <pageArea name="mst1">
+               <medium long="279.4mm" short="215.9mm" stock="letter" orientation="landscape"/>
+               <subform w="279.4mm" name="FirstPage" h="215.9mm" x="0mm" y="0mm">
+                  <bind match="dataRef" ref="$.FormMaster"/>
+                  <subform h="23.475mm" name="frmHeader" w="257mm" x="10mm" y="10.073mm">
+                     <bind match="none"/>
+                     <field name="txtTitle" x="0mm" w="156mm" h="0.590556in" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="18pt" typeface="Arial">
+                           <fill>
+                              <color value="91,91,91"/>
+                           </fill>
+                        </font>
+                        <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="bottom"/>
+                        <assist>
+                           <speak xliff:rid="BDF76B26-45A9-4A62-8CA2-B7B58F782F1B">Header</speak>
+                        </assist>
+                        <value>
+                           <text xliff:rid="92B3C541-AACA-4C15-8946-8041A3D08348">Form Title</text>
+                        </value>
+                        <bind match="dataRef" ref="$.PrintFormTitleText"/>
+                     </field>
+                     <field h="20mm" name="imgLogo" w="40mm" x="217mm">
+                        <ui>
+                           <imageEdit/>
+                        </ui>
+                        <assist>
+                           <toolTip xliff:rid="01B6BC09-926A-4CA4-9AA7-09F23FB24EF7">This is the sender company's logo</toolTip>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden" thickness="0.006in"/>
+                        </border>
+                        <bind match="dataRef" ref="$.Logo1Image"/>
+                        <value>
+                           <image href="http://vml2047.wdf.sap.corp:50000/sap/bc/fp/form/layout/placeholder"/>
+                        </value>
+                     </field>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform id="frmPage_ID_copy2_copy1_copy1" layout="tb" name="frmPage" w="257mm" y="35mm" x="10mm">
+                     <field access="readOnly" minH="5mm" name="txtPageIndex" w="257mm">
+                        <sapa1s xmlns="http://www.sap.com/a1s/cd/om/forms/config"><InfoBlockItem configurable="true" copyForCustomFields="false"><Description lang="en"/></InfoBlockItem></sapa1s>
+                        <ui>
+                           <textEdit>
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font typeface="Arial"/>
+                        <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <caption reserve="230mm">
+                           <font typeface="Arial" weight="bold"/>
+                           <value>
+                              <text xmlns:xft-xliff="http://www.xfa.org/schema/xfa-xliff/1.0/" xft-xliff:id="N3089" xliff:rid="7B028D90-68C8-491C-92E8-ED3A64949067">Page:</text>
+                           </value>
+                           <para hAlign="right"/>
+                        </caption>
+                        <assist>
+                           <speak priority="caption"/>
+                        </assist>
+                        <event activity="ready" name="event__layout_ready" ref="$layout">
+                           <script>// First page - Concatenate the current page number and the overall number of pages
+//              Do not display the page number if there is just one page
+var pageCount = xfa.layout.pageCount();
+
+if (pageCount == "1")
+then
+	this.presence = "inactive";
+else
+	this.rawValue = Concat ("1", "/", pageCount);	
+endif
+</script>
+                        </event>
+                        <para hAlign="right"/>
+                        <bind match="none"/>
+                     </field>
+                     <margin topInset="0mm"/>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
+               <contentArea h="143.4mm" name="cntMain1" w="257mm" x="10mm" y="40mm"/>
+               <field access="readOnly" anchorType="bottomRight" minH="12.5836mm" minW="2mm" name="txtWatermark" x="274.4mm" y="210.9mm">
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="30pt" typeface="Arial" weight="bold">
+                     <fill>
+                        <color value="148,148,148"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="0in">
+                     <para vAlign="middle"/>
+                  </caption>
+                  <bind match="dataRef" ref="$.FormMaster.WatermarkText"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+                  <event activity="initialize" name="event__initialize">
+                     <script>// Rotate the watermark by 30 degrees
+txtWatermark.rotate = "30";
+</script>
+                  </event>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden" thickness="0.1764mm"/>
+                  </border>
+               </field>
+               <subform h="23mm" name="frmFooter" w="257mm" x="10mm" y="183mm">
+                  <subform layout="tb" name="frmFooterBlock_1" w="58.5mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="0DE0AEE4-DED8-48E6-B766-52E9EF013A3D">Footer Block 1</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock1Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_2" w="58.5mm" x="64.1mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="C5FA742A-037B-42A8-8B6B-9B6DAD755C3F">Footer Block 2</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock2Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_3" w="58.5mm" x="128.2mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="8C4587E4-D7F7-4499-B092-FF5352E3DC76">Footer Block 3</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock3Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_4" w="58.5mm" x="192.3mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="9F67C74D-A8F6-4348-BDF6-CC215DB9669C">Footer Block 4</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock4Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <bind match="dataRef" ref="$.FormMaster.Footer"/>
+                  <margin topInset="5mm"/>
+                  <?templateDesigner expand 0?></subform>
+               <occur min="1" max="1"/>
+               <?templateDesigner expand 1?></pageArea>
+            <pageArea name="mst2" id="Page1_ID_copy1_copy1_copy1">
+               <medium long="279.4mm" short="215.9mm" stock="letter" orientation="landscape"/>
+               <subform w="279.4mm" name="SubsequentPage" h="215.9mm" x="0mm" y="0mm">
+                  <bind match="dataRef" ref="$.FormMaster"/>
+                  <subform h="23.475mm" name="frmHeader" w="257mm" x="10mm" y="10.073mm">
+                     <bind match="none"/>
+                     <field name="txtTitle" x="0mm" w="156mm" h="0.590556in" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="18pt" typeface="Arial">
+                           <fill>
+                              <color value="91,91,91"/>
+                           </fill>
+                        </font>
+                        <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="bottom"/>
+                        <assist>
+                           <speak xliff:rid="872B8120-1941-444F-A7CB-01545CB70C30">Header</speak>
+                        </assist>
+                        <value>
+                           <text xliff:rid="F1036299-F1A6-4E40-A5CE-8A8A6EE969D6">Form Title</text>
+                        </value>
+                        <bind match="dataRef" ref="$.PrintFormTitleText"/>
+                     </field>
+                     <field h="20mm" name="imgLogo" w="40mm" x="217mm">
+                        <ui>
+                           <imageEdit/>
+                        </ui>
+                        <assist>
+                           <toolTip xliff:rid="0424CEF2-8288-4385-A62F-ACA99684C5EC">This is the sender company's logo</toolTip>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden" thickness="0.006in"/>
+                        </border>
+                        <bind match="dataRef" ref="$.Logo1Image"/>
+                        <value>
+                           <image href="http://vml2047.wdf.sap.corp:50000/sap/bc/fp/form/layout/placeholder"/>
+                        </value>
+                     </field>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform id="frmPage_ID_copy1_copy1" layout="tb" name="frmPage" w="257mm" y="35mm" x="10mm">
+                     <field access="readOnly" minH="5mm" name="txtPageIndex" w="257mm">
+                        <sapa1s xmlns="http://www.sap.com/a1s/cd/om/forms/config"><InfoBlockItem configurable="true" copyForCustomFields="false"><Description lang="en"/></InfoBlockItem></sapa1s>
+                        <ui>
+                           <textEdit>
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font typeface="Arial"/>
+                        <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <caption reserve="230mm">
+                           <font typeface="Arial" weight="bold"/>
+                           <value>
+                              <text xmlns:xft-xliff="http://www.xfa.org/schema/xfa-xliff/1.0/" xft-xliff:id="N3089" xliff:rid="9A6F8E03-9210-491A-A547-BFBCAF2CA4E3">Page:</text>
+                           </value>
+                           <para hAlign="right"/>
+                        </caption>
+                        <assist>
+                           <speak priority="caption"/>
+                        </assist>
+                        <event activity="ready" name="event__layout_ready" ref="$layout">
+                           <script>// Subsequent page - Concatenate the current page number and the overall number of pages
+var pageRef = ref($)
+$.rawValue = Concat(xfa.layout.page(pageRef), "/" , xfa.layout.pageCount())
+</script>
+                        </event>
+                        <para hAlign="right"/>
+                        <bind match="none"/>
+                     </field>
+                     <margin topInset="0mm"/>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
+               <contentArea h="143.4mm" name="cntMain2" w="257mm" x="10mm" y="40mm"/>
+               <field access="readOnly" anchorType="bottomRight" minH="12.5836mm" minW="2mm" name="txtWatermark" x="274.4mm" y="210.9mm">
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="30pt" typeface="Arial" weight="bold">
+                     <fill>
+                        <color value="148,148,148"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="0in">
+                     <para vAlign="middle"/>
+                  </caption>
+                  <bind match="dataRef" ref="$.FormMaster.WatermarkText"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+                  <event activity="initialize" name="event__initialize">
+                     <script>// Rotate the watermark by 30 degrees
+txtWatermark.rotate = "30";
+</script>
+                  </event>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden" thickness="0.1764mm"/>
+                  </border>
+               </field>
+               <subform h="23mm" name="frmFooter" w="257mm" x="10mm" y="183mm">
+                  <subform layout="tb" name="frmFooterBlock_1" w="58.5mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="C0A06AAA-80D7-490C-BC1C-F5F97D8B7313">Footer Block 1</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock1Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_2" w="58.5mm" x="64.1mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="ABE6DC6E-0DD3-4168-ADB2-E24CBBE9D6C4">Footer Block 2</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock2Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_3" w="58.5mm" x="128.2mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="9F858069-7198-477D-80C9-B39875A26F8F">Footer Block 3</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock3Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_4" w="58.5mm" x="192.3mm">
+                     <field name="txtLine" w="58.5mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <value>
+                           <text xliff:rid="D9718854-68EC-47F4-B90F-6DA9E0D8517C">Footer Block 4</text>
+                        </value>
+                        <bind match="dataRef" ref="$.FooterBlock4Text"/>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <bind match="dataRef" ref="$.FormMaster.Footer"/>
+                  <margin topInset="5mm"/>
+                  <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 1?></pageArea>
+            <?templateDesigner expand 1?></pageSet>
+         <bind match="none"/>
+         <?templateDesigner expand 1?></subform>
+      <subform w="0.1mm" h="0.1mm" name="Portrait_Factsheet">
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle FormMaster_Portrait_Letter_Factsheet?>
+         <pageSet>
+            <pageArea name="mst1" id="f768a4ac-3d82-11e4-9761-a44e313798bc_copy2">
+               <medium long="279.4mm" short="215.9mm" stock="letter"/>
+               <subform w="215.9mm" name="FirstPage" h="279.4mm" x="0mm" y="0mm">
+                  <bind match="dataRef" ref="$.FormMaster"/>
+                  <subform h="23.5mm" name="frmHeader" w="176mm" x="20mm" y="10mm">
+                     <bind match="none"/>
+                     <field h="20mm" name="imgLogo" w="40mm" x="136mm">
+                        <ui>
+                           <imageEdit/>
+                        </ui>
+                        <assist>
+                           <toolTip xliff:rid="44121842-6CAF-460E-B09C-F284B2614D2B">This is the sender company's logo</toolTip>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden" thickness="0.006in"/>
+                        </border>
+                        <bind match="dataRef" ref="$.Logo1Image"/>
+                        <value>
+                           <image href="http://vml2047.wdf.sap.corp:50000/sap/bc/fp/form/layout/placeholder"/>
+                        </value>
+                     </field>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform id="frmPage_ID_copy2_copy2" layout="tb" name="frmPage" w="176mm" y="38mm" x="20mm">
+                     <margin topInset="0mm"/>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform y="94mm" w="7mm" h="116mm" name="FoldingMarks">
+                     <bind match="none"/>
+                     <draw h="0mm" name="linFoldingMarkTop" w="7mm" y="0mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkCenter" w="7mm" y="45.5mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkBottom" w="7mm" y="96mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
+               <contentArea h="215mm" name="cntMain1" w="176mm" x="20mm" y="43mm"/>
+               <field access="readOnly" anchorType="bottomRight" minH="12.5836mm" minW="2mm" name="txtWatermark" x="215mm" y="278.584mm">
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="30pt" typeface="Arial" weight="bold">
+                     <fill>
+                        <color value="148,148,148"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="0in">
+                     <para vAlign="middle"/>
+                  </caption>
+                  <bind match="dataRef" ref="$.FormMaster.WatermarkText"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+                  <event activity="initialize" name="event__initialize">
+                     <script>// Rotate the watermark by 30 degrees
+txtWatermark.rotate = "30";
+</script>
+                  </event>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden" thickness="0.1764mm"/>
+                  </border>
+               </field>
+               <subform h="23mm" name="frmFooter" w="176.2mm" x="20mm" y="242mm">
+                  <subform layout="tb" name="frmFooterBlock_1" w="52mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock1Text"/>
+                        <value>
+                           <text xliff:rid="C3984999-6CA5-4AF5-B513-D97E3DD45679">Footer Block 1</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_2" w="52mm" x="57.6mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock2Text"/>
+                        <value>
+                           <text xliff:rid="50AC60BB-B3D4-4774-BC08-6B91C58A342B">Footer Block 2</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_3" w="52mm" x="115.2mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock3Text"/>
+                        <value>
+                           <text xliff:rid="6EE1D96F-DBA0-4E71-A8AC-3018ABB2B488">Footer Block 3</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <bind match="dataRef" ref="$.FormMaster.Footer"/>
+                  <margin topInset="5mm"/>
+                  <?templateDesigner expand 0?></subform>
+               <occur min="1" max="1"/>
+               <?templateDesigner expand 1?></pageArea>
+            <pageArea name="mst2" id="Page1_ID_copy1_copy2">
+               <medium long="279.4mm" short="215.9mm" stock="letter"/>
+               <subform w="215.9mm" name="SubsequentPage" h="279.4mm" x="0mm" y="0mm">
+                  <bind match="dataRef" ref="$.FormMaster"/>
+                  <subform h="23.5mm" name="frmHeader" w="176mm" x="20mm" y="10mm">
+                     <bind match="none"/>
+                     <field h="20mm" name="imgLogo" w="40mm" x="136mm">
+                        <ui>
+                           <imageEdit/>
+                        </ui>
+                        <assist>
+                           <toolTip xliff:rid="2B96382B-77D5-4977-992D-8C639E17E2C6">This is the sender company's logo</toolTip>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden" thickness="0.006in"/>
+                        </border>
+                        <bind match="dataRef" ref="$.Logo1Image"/>
+                        <value>
+                           <image href="http://vml2047.wdf.sap.corp:50000/sap/bc/fp/form/layout/placeholder"/>
+                        </value>
+                     </field>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform layout="tb" name="frmPage" w="176mm" x="20mm" y="38mm">
+                     <bind match="none"/>
+                     <margin leftInset="0mm"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform y="94mm" w="7mm" h="116mm" name="FoldingMarks">
+                     <bind match="none"/>
+                     <draw h="0mm" name="linFoldingMarkTop" w="7mm" y="0mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkCenter" w="7mm" y="45.5mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkBottom" w="7mm" y="96mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
+               <contentArea h="215mm" name="cntMain2" w="176mm" x="20.266mm" y="43mm"/>
+               <field access="readOnly" anchorType="bottomRight" minH="12.5836mm" minW="2mm" name="txtWatermark" x="215mm" y="278.584mm">
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="30pt" typeface="Arial" weight="bold">
+                     <fill>
+                        <color value="148,148,148"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="0in">
+                     <para vAlign="middle"/>
+                  </caption>
+                  <bind match="dataRef" ref="$.FormMaster.WatermarkText"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+                  <event activity="initialize" name="event__initialize">
+                     <script>// Rotate the watermark by 30 degrees
+txtWatermark.rotate = "30";
+</script>
+                  </event>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden" thickness="0.1764mm"/>
+                  </border>
+               </field>
+               <subform h="23mm" name="frmFooter" w="176.2mm" x="20mm" y="242mm">
+                  <subform layout="tb" name="frmFooterBlock_1" w="52mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock1Text"/>
+                        <value>
+                           <text xliff:rid="7180DDE8-E1D2-4E4D-8659-D4B5934FC265">Footer Block 1</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_2" w="52mm" x="57.6mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock2Text"/>
+                        <value>
+                           <text xliff:rid="E459C184-DCAB-4B3E-8F95-DCAC03995A76">Footer Block 2</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_3" w="52mm" x="115.2mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock3Text"/>
+                        <value>
+                           <text xliff:rid="6FD7F717-EDDE-43AA-8113-660C1119FE53">Footer Block 3</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <bind match="dataRef" ref="$.FormMaster.Footer"/>
+                  <margin topInset="5mm"/>
+                  <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 1?></pageArea>
+            <?templateDesigner expand 1?></pageSet>
+         <bind match="none"/>
+         <?templateDesigner expand 1?></subform>
+      <subform w="0.1mm" h="0.1mm" name="Portrait_ItemList">
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle FormMaster_Portrait_Letter_ItemList?>
+         <pageSet>
+            <pageArea name="mst1" id="f768a4ac-3d82-11e4-9761-a44e313798bc_copy2_copy1">
+               <medium long="279.4mm" short="215.9mm" stock="letter"/>
+               <subform w="215.9mm" name="FirstPage" h="279.4mm" x="0mm" y="0mm">
+                  <bind match="dataRef" ref="$.FormMaster"/>
+                  <subform h="23.5mm" name="frmHeader" w="176mm" x="20mm" y="10mm">
+                     <bind match="none"/>
+                     <field h="20mm" name="imgLogo" w="40mm" x="136mm">
+                        <ui>
+                           <imageEdit/>
+                        </ui>
+                        <assist>
+                           <toolTip xliff:rid="EA6D70B3-C753-4A4A-BD07-F0DBBD6D9F28">This is the sender company's logo</toolTip>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden" thickness="0.006in"/>
+                        </border>
+                        <bind match="dataRef" ref="$.Logo1Image"/>
+                        <value>
+                           <image href="http://vml2047.wdf.sap.corp:50000/sap/bc/fp/form/layout/placeholder"/>
+                        </value>
+                     </field>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform id="frmPage_ID_copy2_copy2_copy1" layout="tb" name="frmPage" w="176mm" y="38mm" x="20mm">
+                     <margin topInset="0mm"/>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform y="94mm" w="7mm" h="116mm" name="FoldingMarks">
+                     <bind match="none"/>
+                     <draw h="0mm" name="linFoldingMarkTop" w="7mm" y="0mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkCenter" w="7mm" y="45.5mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkBottom" w="7mm" y="96mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
+               <contentArea h="215mm" name="cntMain1" w="176mm" x="20mm" y="43mm"/>
+               <field access="readOnly" anchorType="bottomRight" minH="12.5836mm" minW="2mm" name="txtWatermark" x="215mm" y="278.584mm">
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="30pt" typeface="Arial" weight="bold">
+                     <fill>
+                        <color value="148,148,148"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="0in">
+                     <para vAlign="middle"/>
+                  </caption>
+                  <bind match="dataRef" ref="$.FormMaster.WatermarkText"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+                  <event activity="initialize" name="event__initialize">
+                     <script>// Rotate the watermark by 30 degrees
+txtWatermark.rotate = "30";
+</script>
+                  </event>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden" thickness="0.1764mm"/>
+                  </border>
+               </field>
+               <subform h="23mm" name="frmFooter" w="176.2mm" x="20mm" y="242mm">
+                  <subform layout="tb" name="frmFooterBlock_1" w="52mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock1Text"/>
+                        <value>
+                           <text xliff:rid="BCAA8A88-7007-40BF-8881-17131C986A6A">Footer Block 1</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_2" w="52mm" x="57.6mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock2Text"/>
+                        <value>
+                           <text xliff:rid="CACBAEFA-A423-492D-8082-C29C8F39C0FC">Footer Block 2</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_3" w="52mm" x="115.2mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock3Text"/>
+                        <value>
+                           <text xliff:rid="A2125412-CAC6-4215-8C96-B7782014B4D5">Footer Block 3</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <bind match="dataRef" ref="$.FormMaster.Footer"/>
+                  <margin topInset="5mm"/>
+                  <?templateDesigner expand 0?></subform>
+               <occur min="1" max="1"/>
+               <?templateDesigner expand 1?></pageArea>
+            <pageArea name="mst2" id="Page1_ID_copy1_copy2_copy1">
+               <medium long="279.4mm" short="215.9mm" stock="letter"/>
+               <subform w="215.9mm" name="SubsequentPage" h="279.4mm" x="0mm" y="0mm">
+                  <bind match="dataRef" ref="$.FormMaster"/>
+                  <subform h="23.5mm" name="frmHeader" w="176mm" x="20mm" y="10mm">
+                     <bind match="none"/>
+                     <field h="20mm" name="imgLogo" w="40mm" x="136mm">
+                        <ui>
+                           <imageEdit/>
+                        </ui>
+                        <assist>
+                           <toolTip xliff:rid="70DB1788-16F1-40B9-900D-561716E45419">This is the sender company's logo</toolTip>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden" thickness="0.006in"/>
+                        </border>
+                        <bind match="dataRef" ref="$.Logo1Image"/>
+                        <value>
+                           <image href="http://vml2047.wdf.sap.corp:50000/sap/bc/fp/form/layout/placeholder"/>
+                        </value>
+                     </field>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform layout="tb" name="frmPage" w="176mm" x="20mm" y="38mm">
+                     <bind match="none"/>
+                     <margin leftInset="0mm"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform y="94mm" w="7mm" h="116mm" name="FoldingMarks">
+                     <bind match="none"/>
+                     <draw h="0mm" name="linFoldingMarkTop" w="7mm" y="0mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkCenter" w="7mm" y="45.5mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkBottom" w="7mm" y="96mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
+               <contentArea h="215mm" name="cntMain2" w="176mm" x="20.266mm" y="43mm"/>
+               <field access="readOnly" anchorType="bottomRight" minH="12.5836mm" minW="2mm" name="txtWatermark" x="215mm" y="278.584mm">
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="30pt" typeface="Arial" weight="bold">
+                     <fill>
+                        <color value="148,148,148"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="0in">
+                     <para vAlign="middle"/>
+                  </caption>
+                  <bind match="dataRef" ref="$.FormMaster.WatermarkText"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+                  <event activity="initialize" name="event__initialize">
+                     <script>// Rotate the watermark by 30 degrees
+txtWatermark.rotate = "30";
+</script>
+                  </event>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden" thickness="0.1764mm"/>
+                  </border>
+               </field>
+               <subform h="23mm" name="frmFooter" w="176.2mm" x="20mm" y="242mm">
+                  <subform layout="tb" name="frmFooterBlock_1" w="52mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock1Text"/>
+                        <value>
+                           <text xliff:rid="1907EFBC-F551-4CED-A3D3-A9FCDAE94DE9">Footer Block 1</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_2" w="52mm" x="57.6mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock2Text"/>
+                        <value>
+                           <text xliff:rid="5F85E036-F6D3-45FC-AA59-F24D1F03F46C">Footer Block 2</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_3" w="52mm" x="115.2mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock3Text"/>
+                        <value>
+                           <text xliff:rid="7B997496-DBA8-442C-AD11-E2F507EA2E45">Footer Block 3</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <bind match="dataRef" ref="$.FormMaster.Footer"/>
+                  <margin topInset="5mm"/>
+                  <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 1?></pageArea>
+            <?templateDesigner expand 1?></pageSet>
+         <bind match="none"/>
+         <?templateDesigner expand 1?></subform>
+      <subform w="0.1mm" h="0.1mm" name="Portrait_OutboundLetter">
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle FormMaster_Portrait_Letter_OutboundLetter?>
+         <pageSet>
+            <pageArea name="mst1" id="f768a4ac-3d82-11e4-9761-a44e313798bc">
+               <medium long="279.4mm" short="215.9mm" stock="letter"/>
+               <subform w="215.9mm" name="FirstPage" h="279.4mm" x="0mm" y="0mm">
+                  <bind match="dataRef" ref="$.FormMaster"/>
+                  <subform h="23.5mm" name="frmHeader" w="176mm" x="20mm" y="10mm">
+                     <bind match="none"/>
+                     <field h="20mm" name="imgLogo" w="40mm" x="136mm">
+                        <ui>
+                           <imageEdit/>
+                        </ui>
+                        <assist>
+                           <toolTip xliff:rid="FFB4A5BC-4A26-4CD2-9132-D78C91EDDB17">This is the sender company's logo</toolTip>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden" thickness="0.006in"/>
+                        </border>
+                        <bind match="dataRef" ref="$.Logo1Image"/>
+                        <value>
+                           <image href="http://vml2047.wdf.sap.corp:50000/sap/bc/fp/form/layout/placeholder"/>
+                        </value>
+                     </field>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform id="frmPage_ID_copy2" layout="tb" name="frmPage" w="176mm" y="38mm" x="20mm">
+                     <margin topInset="0mm"/>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform name="frmRecipientAddress" w="85mm" x="20mm" y="47mm">
+                     <margin bottomInset="0mm" topInset="0mm"/>
+                     <bind match="dataRef" ref="$.RecipientAddress"/>
+                     <subform layout="tb" name="frmAddress" w="85mm" y="0.001mm">
+                        <field access="readOnly" minH="4.5mm" name="txtLine_1" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="0.7mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.AddressLine1Text"/>
+                           <assist>
+                              <toolTip xmlns:xft-xliff="http://www.xfa.org/schema/xfa-xliff/1.0/" xft-xliff:id="N7069" xliff:rid="N7069">The receiver's address is</toolTip>
+                              <speak priority="toolTip"/>
+                           </assist>
+                        </field>
+                        <field access="readOnly" minH="4.5mm" name="txtLine_2" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="0.7mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.AddressLine2Text"/>
+                           <assist>
+                              <speak disable="1"/>
+                           </assist>
+                        </field>
+                        <field access="readOnly" minH="4.5mm" name="txtLine_3" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="0.7mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.AddressLine3Text"/>
+                           <assist>
+                              <speak disable="1"/>
+                           </assist>
+                        </field>
+                        <field access="readOnly" minH="4.5mm" name="txtLine_4" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="0.7mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.AddressLine4Text"/>
+                           <assist>
+                              <speak disable="1"/>
+                           </assist>
+                        </field>
+                        <field access="readOnly" minH="4.5mm" name="txtLine_5" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="0.7mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.AddressLine5Text"/>
+                           <assist>
+                              <speak disable="1"/>
+                           </assist>
+                        </field>
+                        <field access="readOnly" minH="4.5mm" name="txtLine_6" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="0.7mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.AddressLine6Text"/>
+                           <assist>
+                              <speak disable="1"/>
+                           </assist>
+                        </field>
+                        <field access="readOnly" minH="4.5mm" name="txtLine_7" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="0.7mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.AddressLine7Text"/>
+                           <assist>
+                              <speak disable="1"/>
+                           </assist>
+                        </field>
+                        <field access="readOnly" minH="4.5mm" name="txtLine_8" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="0.7mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.AddressLine8Text"/>
+                           <assist>
+                              <speak disable="1"/>
+                           </assist>
+                        </field>
+                        <margin bottomInset="0mm"/>
+                        <bind match="none"/>
+                        <?templateDesigner expand 0?></subform>
+                     <subform y="39mm" w="85mm" minH="5mm" layout="tb" name="frmAddressKey" presence="inactive">
+                        <bind match="none"/>
+                        <field access="readOnly" minH="5mm" name="txtAddressType" presence="hidden" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="1mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.AddressType"/>
+                           <assist>
+                              <speak disable="1"/>
+                           </assist>
+                        </field>
+                        <field access="readOnly" minH="5mm" name="txtAddressID" presence="hidden" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="1mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.AddressID"/>
+                           <assist>
+                              <speak disable="1"/>
+                           </assist>
+                        </field>
+                        <field access="readOnly" minH="5mm" name="txtPersonID" presence="hidden" w="85mm">
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border presence="hidden"/>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Arial"/>
+                           <margin bottomInset="1mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                           <caption reserve="0in"/>
+                           <bind match="dataRef" ref="$.Person"/>
+                           <assist>
+                              <speak disable="1"/>
+                           </assist>
+                        </field>
+                        <?templateDesigner expand 0?></subform>
+                     <?templateDesigner expand 0?></subform>
+                  <subform y="94mm" w="7mm" h="116mm" name="FoldingMarks">
+                     <bind match="none"/>
+                     <draw h="0mm" name="linFoldingMarkTop" w="7mm" y="0mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkCenter" w="7mm" y="45.5mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkBottom" w="7mm" y="96mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
+               <contentArea h="215mm" name="cntMain1" w="176mm" x="20mm" y="43mm"/>
+               <field access="readOnly" anchorType="bottomRight" minH="12.5836mm" minW="2mm" name="txtWatermark" x="215mm" y="278.584mm">
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="30pt" typeface="Arial" weight="bold">
+                     <fill>
+                        <color value="148,148,148"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="0in">
+                     <para vAlign="middle"/>
+                  </caption>
+                  <bind match="dataRef" ref="$.FormMaster.WatermarkText"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+                  <event activity="initialize" name="event__initialize">
+                     <script>// Rotate the watermark by 30 degrees
+txtWatermark.rotate = "30";
+</script>
+                  </event>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden" thickness="0.1764mm"/>
+                  </border>
+               </field>
+               <subform h="23mm" name="frmFooter" w="176.2mm" x="20mm" y="242mm">
+                  <subform layout="tb" name="frmFooterBlock_1" w="52mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock1Text"/>
+                        <value>
+                           <text xliff:rid="23CD2BA5-8A50-4BF5-899C-86D4D81FF675">Footer Block 1</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_2" w="52mm" x="57.6mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock2Text"/>
+                        <value>
+                           <text xliff:rid="1449C1E3-92B5-4FC7-992D-9A7DB3F3FB8D">Footer Block 2</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_3" w="52mm" x="115.2mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock3Text"/>
+                        <value>
+                           <text xliff:rid="F7EC9BA2-A021-4A1E-9911-84E6D7DE6C1F">Footer Block 3</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <bind match="dataRef" ref="$.FormMaster.Footer"/>
+                  <margin topInset="5mm"/>
+                  <?templateDesigner expand 0?></subform>
+               <occur min="1" max="1"/>
+               <?templateDesigner expand 1?></pageArea>
+            <pageArea name="mst2" id="Page1_ID_copy1">
+               <medium long="279.4mm" short="215.9mm" stock="letter"/>
+               <subform w="215.9mm" name="SubsequentPage" h="279.4mm" x="0mm" y="0mm">
+                  <bind match="dataRef" ref="$.FormMaster"/>
+                  <subform h="23.5mm" name="frmHeader" w="176mm" x="20mm" y="10mm">
+                     <bind match="none"/>
+                     <field h="20mm" name="imgLogo" w="40mm" x="136mm">
+                        <ui>
+                           <imageEdit/>
+                        </ui>
+                        <assist>
+                           <toolTip xliff:rid="257418B2-AFAC-4FF1-830E-F5331DEEB1B8">This is the sender company's logo</toolTip>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden" thickness="0.006in"/>
+                        </border>
+                        <bind match="dataRef" ref="$.Logo1Image"/>
+                        <value>
+                           <image href="http://vml2047.wdf.sap.corp:50000/sap/bc/fp/form/layout/placeholder"/>
+                        </value>
+                     </field>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform layout="tb" name="frmPage" w="176mm" x="20mm" y="38mm">
+                     <bind match="none"/>
+                     <margin leftInset="0mm"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform y="94mm" w="7mm" h="116mm" name="FoldingMarks">
+                     <bind match="none"/>
+                     <draw h="0mm" name="linFoldingMarkTop" w="7mm" y="0mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkCenter" w="7mm" y="45.5mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <draw h="0mm" name="linFoldingMarkBottom" w="7mm" y="96mm">
+                        <value>
+                           <line>
+                              <edge>
+                                 <color value="91,91,91"/>
+                              </edge>
+                           </line>
+                        </value>
+                     </draw>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
+               <contentArea h="215mm" name="cntMain2" w="176mm" x="20.266mm" y="43mm"/>
+               <field access="readOnly" anchorType="bottomRight" minH="12.5836mm" minW="2mm" name="txtWatermark" x="215mm" y="278.584mm">
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="30pt" typeface="Arial" weight="bold">
+                     <fill>
+                        <color value="148,148,148"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="0in">
+                     <para vAlign="middle"/>
+                  </caption>
+                  <bind match="dataRef" ref="$.FormMaster.WatermarkText"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+                  <event activity="initialize" name="event__initialize">
+                     <script>// Rotate the watermark by 30 degrees
+txtWatermark.rotate = "30";
+</script>
+                  </event>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden" thickness="0.1764mm"/>
+                  </border>
+               </field>
+               <subform h="23mm" name="frmFooter" w="176.2mm" x="20mm" y="242mm">
+                  <subform layout="tb" name="frmFooterBlock_1" w="52mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock1Text"/>
+                        <value>
+                           <text xliff:rid="056EC1C7-DA08-49FE-A04C-ECC4EADCD791">Footer Block 1</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_2" w="52mm" x="57.6mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock2Text"/>
+                        <value>
+                           <text xliff:rid="75093E0D-BEE7-4BCF-9906-FEFB30064FBF">Footer Block 2</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <subform layout="tb" name="frmFooterBlock_3" w="52mm" x="115.2mm">
+                     <field name="txtLine" w="52mm" h="18mm" access="readOnly">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border presence="hidden"/>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+                        <margin bottomInset="0.8mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <assist>
+                           <speak disable="1"/>
+                        </assist>
+                        <bind match="dataRef" ref="$.FooterBlock3Text"/>
+                        <value>
+                           <text xliff:rid="F250D62C-FB27-4104-ADE0-9FB2D1A78D31">Footer Block 3</text>
+                        </value>
+                     </field>
+                     <bind match="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <bind match="dataRef" ref="$.FormMaster.Footer"/>
+                  <margin topInset="5mm"/>
+                  <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 1?></pageArea>
+            <?templateDesigner expand 1?></pageSet>
+         <bind match="none"/>
+         <?templateDesigner expand 0?></subform>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Arial" 0 0 ISO-8859-1 4 68 17 0003001400150016001700250029003700460048004C004E004F0050005200550057 1234BFTceiklmort?>
+      <?renderCache.subset "Arial" 1 0 ISO-8859-1 4 20 5 001D003300440048004A:Paeg?>
+   </subform>
+   <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?originalXFAVersion http://www.xfa.org/schema/xfa-template/3.0/?>
+   <?templateDesigner DefaultLanguage FormCalc?>
+   <?templateDesigner DefaultRunAt client?>
+   <?acrobat JavaScript strictScoping?>
+   <?PDFPrintOptions embedViewerPrefs 0?>
+   <?PDFPrintOptions embedPrintOnFormOpen 0?>
+   <?PDFPrintOptions scalingPrefs 0?>
+   <?PDFPrintOptions enforceScalingPrefs 0?>
+   <?PDFPrintOptions paperSource 0?>
+   <?PDFPrintOptions duplexMode 0?>
+   <?templateDesigner DefaultPreviewType print?>
+   <?templateDesigner DefaultPreviewPagination simplex?>
+   <?templateDesigner XDPPreviewFormat 19?>
+   <?templateDesigner DefaultCaptionFontSettings face:Arial;size:10;weight:normal;style:normal?>
+   <?templateDesigner DefaultValueFontSettings face:Arial;size:10;weight:normal;style:normal?>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner FormTargetVersion 36?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Guidelines v:500000;v:6925000;h:300000;h:4950000?>
+   <?templateDesigner Zoom 55?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <pdf>
+         <!--  [0..n]  -->
+         <version>1.7</version>
+         <adobeExtensionLevel>11</adobeExtensionLevel>
+      </pdf>
+      <common>
+         <data>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+      </common>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/" xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <xmp:MetadataDate>2025-04-14T23:44:36Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+         <xmpMM:DocumentID>uuid:17245483-59a7-44e5-bbda-32d968734d53</xmpMM:DocumentID>
+         <pdfuaid:part>1</pdfuaid:part>
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">FormMaster_Landscape_Letter_Factsheet</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.data.Landscape_Factsheet</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">FormMaster_Landscape_Letter_ItemList</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.data.Landscape_ItemList</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">FormMaster_Portrait_Letter_Factsheet</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.data.Portrait_Factsheet</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">FormMaster_Portrait_Letter_ItemList</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.data.Portrait_ItemList</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">FormMaster_Portrait_Letter_OutboundLetter</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.data.Portrait_OutboundLetter</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/"/>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
+   <xsdConnection name="SOMU_FORM_MASTER_LETTER" dataDescription="data">
+      <uri/>
+      <rootElement>data</rootElement>
+   </xsdConnection>
+</connectionSet>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+   <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="data">
+      <data xfa:dataNode="dataGroup"/>
+   </dd:dataDescription>
+</xfa:datasets></xdp:xdp>
